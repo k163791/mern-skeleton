@@ -5,7 +5,7 @@ const CURRENT_WORKING_DIR = process.cwd();
 const config = {
   name: "browser",
   mode: "development",
-  devtool: "eval-source-map",
+  devtool: "cheap-module-source-map",
   entry: [
     "webpack-hot-middleware/client?reload=true",
     path.join(CURRENT_WORKING_DIR, "client/main.js"),
@@ -13,7 +13,7 @@ const config = {
   output: {
     path: path.join(CURRENT_WORKING_DIR, "/dist"),
     filename: "bundle.js",
-    publicPath: "/dist/",
+    publicPath: "/dist",
   },
   module: {
     rules: [
@@ -28,6 +28,7 @@ const config = {
       },
     ],
   },
+
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),

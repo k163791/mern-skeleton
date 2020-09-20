@@ -3,7 +3,7 @@ import app from "./express";
 import mongoose from "mongoose";
 
 mongoose.Promise = global.Promise;
-mongoose.connect(config.mongoUri, {
+mongoose.connect("mongodb://localhost:27017/mernproject", {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true,
